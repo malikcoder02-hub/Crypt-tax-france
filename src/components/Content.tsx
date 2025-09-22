@@ -65,9 +65,9 @@ const Content: React.FC = () => {
                 key={section.id}
                 className="group relative overflow-hidden"
               >
-                <div className={`absolute inset-0 bg-gradient-to-br ${section.bgGradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl`}></div>
+                <div className={`absolute inset-0 bg-gradient-to-br ${section.bgGradient} opacity-0 group-hover:opacity-50 transition-opacity duration-300 rounded-2xl`}></div>
                 
-                <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-gray-200/50 shadow-lg hover:shadow-2xl transition-all duration-500 hover:border-gray-300/50 hover:bg-white/90">
+                <div className="relative bg-white/90 backdrop-blur-sm rounded-2xl p-8 border border-gray-200/50 shadow-md hover:shadow-xl transition-all duration-300 hover:border-gray-300/50 hover:bg-white/95">
                   {/* Icon and Title Row */}
                   <div className="flex items-start space-x-4 mb-6">
                     <div className={`flex-shrink-0 w-16 h-16 bg-gradient-to-r ${section.gradient} rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
