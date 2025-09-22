@@ -57,17 +57,15 @@ const Content: React.FC = () => {
         </div>
 
         {/* Content Grid - New Card Layout */}
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 gap-8 mb-16 items-stretch">
           {sections.map((section, index) => {
             const Icon = section.icon;
             return (
               <div 
                 key={section.id}
-                className="group relative overflow-hidden"
+                className="group relative overflow-hidden h-full"
               >
-                <div className={`absolute inset-0 bg-gradient-to-br ${section.bgGradient} opacity-0 group-hover:opacity-50 transition-opacity duration-300 rounded-2xl`}></div>
-                
-                <div className="relative bg-white/90 backdrop-blur-sm rounded-2xl p-8 border border-gray-200/50 shadow-md hover:shadow-xl transition-all duration-300 hover:border-gray-300/50 hover:bg-white/95">
+                <div className="relative bg-white/95 backdrop-blur-sm rounded-2xl p-8 border border-gray-200/50 shadow-sm hover:shadow-lg transition-all duration-300 hover:border-gray-300/50 hover:bg-white h-full flex flex-col">
                   {/* Icon and Title Row */}
                   <div className="flex items-start space-x-4 mb-6">
                     <div className={`flex-shrink-0 w-16 h-16 bg-gradient-to-r ${section.gradient} rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
@@ -81,12 +79,12 @@ const Content: React.FC = () => {
                   </div>
 
                   {/* Content */}
-                  <p className="text-gray-600 leading-relaxed text-lg group-hover:text-gray-700 transition-colors">
+                  <p className="text-gray-600 leading-relaxed text-lg group-hover:text-gray-700 transition-colors flex-1">
                     {section.data.content}
                   </p>
 
                   {/* Hover Arrow */}
-                  <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-2 group-hover:translate-x-0">
+                  <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-2 group-hover:translate-x-0 mt-4">
                     <ArrowRight className="w-5 h-5 text-gray-400" />
                   </div>
                 </div>
