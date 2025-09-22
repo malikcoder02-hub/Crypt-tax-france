@@ -7,6 +7,7 @@ const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
+    phone: '',
     message: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -33,7 +34,7 @@ const Contact: React.FC = () => {
     // Reset form after success message
     setTimeout(() => {
       setIsSubmitted(false);
-      setFormData({ fullName: '', email: '', message: '' });
+      setFormData({ fullName: '', email: '', phone: '', message: '' });
     }, 3000);
   };
 
@@ -100,7 +101,7 @@ const Contact: React.FC = () => {
                         value={formData.fullName}
                         onChange={handleInputChange}
                         required
-                        className="w-full pl-10 pr-4 py-3 bg-white/80 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all duration-300 text-gray-700 placeholder-gray-400"
+                        className="w-full pl-10 pr-4 py-2.5 bg-white/90 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all duration-200 text-gray-700 placeholder-gray-400"
                         placeholder="Your name"
                       />
                     </div>
@@ -119,10 +120,28 @@ const Contact: React.FC = () => {
                         value={formData.email}
                         onChange={handleInputChange}
                         required
-                        className="w-full pl-10 pr-4 py-3 bg-white/80 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all duration-300 text-gray-700 placeholder-gray-400"
+                        className="w-full pl-10 pr-4 py-2.5 bg-white/90 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all duration-200 text-gray-700 placeholder-gray-400"
                         placeholder="your@email.com"
                       />
                     </div>
+                  </div>
+                </div>
+
+                {/* Phone */}
+                <div className="space-y-2">
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
+                    {content.contact.form.phone}
+                  </label>
+                  <div className="relative">
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-2.5 bg-white/90 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all duration-200 text-gray-700 placeholder-gray-400"
+                      placeholder="+33 1 23 45 67 89"
+                    />
                   </div>
                 </div>
 
@@ -138,20 +157,20 @@ const Contact: React.FC = () => {
                       name="message"
                       value={formData.message}
                       onChange={handleInputChange}
-                      rows={4}
+                      rows={3}
                       required
-                      className="w-full pl-10 pr-4 py-3 bg-white/80 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all duration-300 text-gray-700 placeholder-gray-400 resize-none"
+                      className="w-full pl-10 pr-4 py-2.5 bg-white/90 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all duration-200 text-gray-700 placeholder-gray-400 resize-none"
                       placeholder="Tell us about your crypto tax situation..."
                     />
                   </div>
                 </div>
 
                 {/* Submit Button */}
-                <div className="text-center pt-4">
+                <div className="text-center pt-2">
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="group relative inline-flex items-center justify-center px-8 py-3 text-base font-semibold text-white bg-gradient-to-r from-blue-600 via-purple-600 to-red-600 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                    className="group relative inline-flex items-center justify-center px-8 py-2.5 text-base font-semibold text-white bg-gradient-to-r from-blue-600 via-purple-600 to-red-600 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                   >
                     {isSubmitting ? (
                       <div className="flex items-center space-x-2">
@@ -169,7 +188,7 @@ const Contact: React.FC = () => {
               </form>
 
               {/* Subtext */}
-              <div className="mt-6 text-center">
+              <div className="mt-4 text-center">
                 <p className="text-gray-500 text-sm">
                   {content.contact.subtext}
                 </p>
